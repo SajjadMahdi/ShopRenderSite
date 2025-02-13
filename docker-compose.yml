@@ -1,0 +1,29 @@
+services:
+  shop.web:
+    image: ${DOCKER_REGISTRY-}shopweb
+    build:
+      context: .
+      dockerfile: Shop.Web/Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - sqlserver
+    environment:
+      - ConnectionStrings:DefaultConnection=Server=sqlserver;Database=ShopDb;User Id=sa;Password=SajjadM;
+
+
+  # SQL Server service
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=SajjadM
+      - MSSQL_PID=Express
+    volumes:
+      - sqlserver-data:/var/opt/mssql
+
+volumes:
+  sqlserver-data:
