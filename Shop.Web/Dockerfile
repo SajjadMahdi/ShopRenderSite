@@ -19,7 +19,7 @@ COPY ["Shop.Infra.Data/Shop.Infra.Data.csproj", "Shop.Infra.Data/"]
 COPY ["Shop.Infra.IoC/Shop.Infra.IoC.csproj", "Shop.Infra.IoC/"]
 RUN dotnet restore "./Shop.Web/Shop.Web.csproj"
 COPY . .
-WORKDIR "/src/Shop.Web"
+WORKDIR "./Shop.Web"
 RUN dotnet build "./Shop.Web.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
