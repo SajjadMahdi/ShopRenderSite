@@ -1,38 +1,41 @@
 ﻿@if (TempData["SuccessMessage"] != null ||
-    TempData["WarningMessage"] != null ||
-    TempData["ErrorMessage"] != null ||
-    TempData["InfoMessage"] != null)
+TempData["WarningMessage"] != null ||
+TempData["ErrorMessage"] != null ||
+TempData["InfoMessage"] != null)
 {
     @if (TempData["SuccessMessage"] != null)
     {
         <script>
             $(document).ready(function () {
-                ShowMessage('موفقیت', '@TempData["SuccessMessage"]', 'success')
-            })
+                ShowMessage('پیغام موفقیت','@TempData["SuccessMessage"]','success')
+            });
         </script>
     }
+
     @if (TempData["WarningMessage"] != null)
     {
         <script>
             $(document).ready(function () {
-                ShowMessage('اخطار', '@TempData["WarningMessage"]', 'warning')
-            })
+                ShowMessage('پیغام اخطار','@TempData["WarningMessage"]','warning')
+            });
         </script>
     }
+
     @if (TempData["ErrorMessage"] != null)
     {
         <script>
             $(document).ready(function () {
-                ShowMessage('خطا', '@TempData["ErrorMessage"]', 'error')
-            })
+                ShowMessage('پیغام خطا','@TempData["ErrorMessage"]','error')
+            });
         </script>
     }
+
     @if (TempData["InfoMessage"] != null)
     {
         <script>
             $(document).ready(function () {
-                ShowMessage('اطلاعیه', '@TempData["InfoMessage"]', 'info')
-            })
+                ShowMessage('پیغام اطالاعیه','@TempData["InfoMessage"]','info')
+            });
         </script>
     }
 }

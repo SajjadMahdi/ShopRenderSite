@@ -1,11 +1,6 @@
 ﻿
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
-
-
-<!-- Mirrored from filenter.ir/molla/index-4.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Jul 2021 07:17:19 GMT -->
-
-<!-- Mirrored from products.theme-file.ir/productshtml/Molla/molla/index-4.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Jul 2021 05:56:36 GMT -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,23 +8,23 @@
     <title>@ViewData["Title"]</title>
 
     <partial name="_TagRefrences" />
-    <partial name="_HeaderRefrences"/>
-    @RenderSection("Styles",false)
+    <partial name="_HeaderRefrences" />
+    @RenderSection("styles", false)
 </head>
 
 <body>
     <div class="page-wrapper">
-
-        @await Component.InvokeAsync("SiteHeader");
-
+        @await Component.InvokeAsync("SiteHeader")
         <main class="main">
             @RenderBody()
-        </main><!-- End .main -->
-        @await Component.InvokeAsync("SiteFooter");
-    </div><!-- End .page-wrapper -->
+        </main>
+    <!-- End .main -->
 
+        @await Component.InvokeAsync("SiteFooter")
+    </div>
     <button id="scroll-top" title="Back to Top"><i class="icon-arrow-up"></i></button>
 
+    
     <partial name="_Mobile" />
     <partial name="_FooterRefrences" />
     @RenderSection("scripts",false)
